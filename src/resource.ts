@@ -28,10 +28,12 @@ class SlackResource {
     const numberEmojiMap = { 1: "one", 2: "two", 3: "three", 4: "four", 5: "five" };
 
     if (title && title.indexOf(`"`) >= 0) {
-      title = escape(title);
+      title = this.escapeQuotes(title);
+      console.log(title);
     }
     if (desc && desc.indexOf(`"`) >= 0) {
-      desc = escape(desc);
+      desc = this.escapeQuotes(desc);   
+      console.log(desc);
     }
 
     const failureMsg: string = "Sorry, I couldn't find the details. Please visit the link to find out."
@@ -52,7 +54,7 @@ class SlackResource {
                     "type": "section",
                     "text": {
                         "type": "mrkdwn",
-                        "text": ":arrow_forward: *${title}*"
+                        "text": ":arrow_forward: *${(title) ? title : failureMsg}*"
                     }
                 },
                 {
@@ -88,9 +90,7 @@ class SlackResource {
   };
 
   escapeQuotes(str: string): string {
-
-
-    return str?.replace(/"/g, '\\"');
+    return (str?.replace(/"/g, '\\"'));
 
     // while(str.indexOf(`"`) >= 0){
     //     let index = str.indexOf(`"`);

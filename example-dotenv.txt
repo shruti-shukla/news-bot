@@ -1,0 +1,10 @@
+#https://api.slack.com/apps
+SLACK_SIGNING_SECRET 
+SLACK_BOT_TOKEN 
+APP_ID
+CLIENT_ID
+CLIENT_SECRET
+#https://newsapi.org/docs/get-started
+NEWS_API_KEY
+
+PORT =4001
