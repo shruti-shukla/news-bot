@@ -12,8 +12,6 @@
   "engines": {
     "node": "14.x"
   },
-  "author": "Slack Technologies, Inc.",
-  "license": "MIT",
   "dependencies": {
     "@slack/bolt": "^3.3.0",
     "@types/node": "^14.14.35",
